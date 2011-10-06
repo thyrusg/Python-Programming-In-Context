@@ -29,18 +29,46 @@ def index2letter(index):
     b = ''
     if str(a) in letters:
         b = chr(int(a))
+    return b
         
 # 4: Write a function that takes an exam score from 0-100 and returns the
 # corresponding letter grade. Use the same grading scale your professor
 # does for this class. 
 
+def grade():
+    score = int(input('Enter your score: '))
+    if score >= 95:
+        lettergrade = "A"
+    elif score >= 94 or score >= 90:
+        lettergrade = "A-"
+    elif score >= 89 or score >= 88:
+        lettergrade = "B+"
+    elif score >= 87 or score >= 83:
+        lettergrade = "B"
+    elif score >= 82 or score >= 80:
+        lettergrade = "B-"
+    elif score >= 79 or score >= 78:
+        lettergrade = "C+"
+    elif score >= 77 or score >= 73:
+        lettergrade = "C"
+    elif score >= 72 or score >= 70:
+        lettergrade = "C-"
+    elif score >= 69 or score >= 68:
+        lettergrade = "D+"
+    elif score >= 67 or score >= 63:
+        lettergrade = "D"
+    elif score >= 62 or score >= 60:
+        lettergrade = "D-"
+    elif score <= 59:
+        lettergrade = "F"
+    return lettergrade
 
-
+    
 
 
 ###################################################################
 
-def index2letter(index):
+"""def index2letter(index):
 ...     alphabet = "abcdefghijklmnopqrstuvwxyz"
 ...     letters = ''
 ...     num = 97
@@ -49,6 +77,6 @@ def index2letter(index):
 ...         letters = letters + "," + str(ord(x))
 ...     b = ''
 ...     if str(a) in letters:
-...         b = chr(int(a))
+...         b = chr(int(a))"""
 
 
