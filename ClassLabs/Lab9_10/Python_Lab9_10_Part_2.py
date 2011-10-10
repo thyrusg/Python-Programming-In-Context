@@ -9,23 +9,58 @@ def counter(value):
 
 # 4B: DIY In function - return True if item is in list
 
-def in(value,list):
-
 def inside(value, list):
    answer = ""
    for item in list:
        if value == item:
            answer = "True"
        break
+   if answer == "":
+       answer = "False"
    return answer
+   
    
 # 4C: DIY list reverse function
 
 def reverseList(list):
-    #string = str(input('Please Enter A String: '))
-    reversed = []
-    for item in list:
-        ch = list.index(item)
-        reversed = list[ch] + reversed
-    return reversed   
+    rev = []
+    count = -1
+    for num in list:
+        ch = list[count]
+        rev.append(ch)
+        count = count - 1
+    return rev
 
+# 4D: DIY Index function
+
+def getindex(item,list):
+   count = 0
+   for element in list:
+       if element == item:
+           print count
+       else:
+           count = count + 1
+   if item not in list:
+        print 1
+        
+# 4E: DIY Insert function     
+
+# 5: Create a function called shuffle that takes a list and returns a new
+# list with the elements shuffled into a random order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
