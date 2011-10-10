@@ -48,6 +48,22 @@ def getindex(item,list):
 # 5: Create a function called shuffle that takes a list and returns a new
 # list with the elements shuffled into a random order
 
+def shuffle(list):
+   import random
+   mylist = []
+   for item in list:
+       mylist.insert(random.randint(0,len(list)-1),item)
+   return mylist
+   
+# 6: Implement the getMin function using iteration by item
+
+def getMin(list):
+   min = list[0]
+   for num in range(1,len(list)):
+       if list[num] < min:
+           min = list[num]
+   return min   
+
 
 
 
