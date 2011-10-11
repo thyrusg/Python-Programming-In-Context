@@ -45,6 +45,20 @@ def getindex(item,list):
         
 # 4E: DIY Insert function     
 
+def inserter(index, item, list):
+    newlist = []
+    count = 0
+    for element in list:
+        if count == index:
+            newlist = list[:count]
+            newlist.append(item)
+            for thing in list[count:]:
+                newlist.append(thing)
+                #newlist.append(list[count:])
+        else:
+            count = count + 1
+    return newlist
+
 # 5: Create a function called shuffle that takes a list and returns a new
 # list with the elements shuffled into a random order
 
