@@ -9,11 +9,21 @@ def studentsort(dictionary):
         if name in dictionary:
             print(name, dictionary[name])
 
-
+################################################################
+# def studentsort(dictionary)
 # students = list(dictionary.keys)
 # students.sort
+# for name in students:
+#     if name in dictionary:
+#         print(name, dictionary[name])
+# 
+# This is a shorten way of the above function. UNTESTED
+#
+#
+#
+###############################################################
 
-         
+        
 # 2: Write a function called getScore that takes a name and a dictionary as a parameter and returns the score for that name if it is in the dictionary. If the name is
 # not in the dictionary, print an error message and return -1.
 
@@ -28,7 +38,10 @@ def getScore(name, dictionary):
 # 3: Suppose you have a list of key-score values like the following: [('john',10),('bob',8),('john',5),('bob',17]. Write a function that takes such a list as a
 # parameter and prints out a table of average scores for each person. 
 
-
+def getAvg(list):
+    dictionary = dict(list)
+    
+    
 
 # 4: Another way to compute the frequency table is to obtain a list of key-value pairs using the items method. This list of tuples can be sorted and printed without
 # returning to the original dictionary. Rewrite the frequency table function using this idea. 
