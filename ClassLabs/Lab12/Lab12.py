@@ -38,10 +38,51 @@ def getScore(name, dictionary):
 # 3: Suppose you have a list of key-score values like the following: [('john',10),('bob',8),('john',5),('bob',17]. Write a function that takes such a list as a
 # parameter and prints out a table of average scores for each person. 
 
+lister = [('john',10),('bob',8),('john',5),('bob',17)]
+dict = {}
+
+def mean(alist):
+    mean = sum(alist) / len(alist)
+
 def getAvg(list):
-    dictionary = dict(list)
-    
+    for key, value in list:
+        dict[key].append(value)
+    for item in dict:
+        print item, mean(dict[item])  
+        
     
 
 # 4: Another way to compute the frequency table is to obtain a list of key-value pairs using the items method. This list of tuples can be sorted and printed without
 # returning to the original dictionary. Rewrite the frequency table function using this idea. 
+
+#Original frequency table function
+
+def frequencyTable(list):
+    countdict = {}
+
+    for item in list:
+        if item in countdict:
+	    countdict[item] = countdict[item] + 1
+	else:
+	    countdict[item] = 1
+    
+    itemlist = list(countdict.keys())
+    itemlist.sort()
+
+    print("ITEM","FREQUENCY")
+   
+    for item in itemlist:
+        print(item, "    ", countdict[item])
+
+#My function
+
+listly = [('1',5,),('2',7),('3',2),('4',1),('5',9)]
+
+def freqtable(list):
+    list.sort()
+    print "ITEM","FREQUENCY"
+    for key, value in list:
+        print key,"    ",value
+        
+
+            
