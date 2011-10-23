@@ -24,7 +24,7 @@ salaries = [1,2,3,4,5,6,7,8]
 for item in salaries:
     print "20.2f" % item
 
-# 2: Write a program the 'rainfall.txt' file and then write out a new file
+# 2: Write a program to read the 'rainfall.txt' file and then write out a new file
 # called rainfallmt.txt. The new file should format each line so that the city
 # is right-justified in a field that is 10 characters wide, and the rainfall
 # data should be printed in a field that is 7 characters wide with 2 digits to
@@ -33,6 +33,22 @@ for item in salaries:
 # displayed in inches).
 
 
+def formater(file):
+    f = open(file,'r')
+    out = open('rainfallmt.txt','w')
+    out.write("%+10s %7s \n" % ("CITY","RAINFALL")) # Create headers
+    for line in f:
+        splitter = line.split()
+        inches = float(splitter[1])
+        cent = inches * 2.54
+        out.write("%10s %7.2f \n " % (splitter[0],cent))
+    
+    f.close()
+    out.close()
+
+# Problem: The function writes all the data to the new file, but throws an error 
+# at the end. 
+    
 
 
 # 3: Write a program that reads in a file and then prints out the number of
@@ -44,7 +60,7 @@ def linecount(file):
     linecount = 0
     for line in f:
         linecount = linecount + 1
-    return linecount
+    %return linecount
     f.close()
 
 def charactercount(file):
