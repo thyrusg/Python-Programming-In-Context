@@ -14,7 +14,7 @@ print("%7f" % amount)
 # of 6
 
 x,y,z = 1,2,3
-print "%-6d %-6d %-6d" % x,y,z
+print "%-6d %-6d %-6d" %(x,y,z)
 
 # 1C: Write a loop that outpit the numbers in a list named salaries. The 
 # outputs should be formatted in a column that is right-justified, with a
@@ -22,7 +22,7 @@ print "%-6d %-6d %-6d" % x,y,z
 
 salaries = [1,2,3,4,5,6,7,8]
 for item in salaries:
-    print "20.2f" % item
+    print "%20.2f" % (item)
 
 # 2: Write a program to read the 'rainfall.txt' file and then write out a new file
 # called rainfallmt.txt. The new file should format each line so that the city
@@ -60,7 +60,7 @@ def linecount(file):
     linecount = 0
     for line in f:
         linecount = linecount + 1
-    %return linecount
+    return linecount
     f.close()
 
 def charactercount(file):
