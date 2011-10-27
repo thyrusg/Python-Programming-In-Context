@@ -11,3 +11,11 @@ def makeMagnitudeList():
 
 magList = makeMagnitudeList()
 print(magList)
+
+
+-----------------------------------------------------------------
+
+def makeMagnitudeList():
+    quakefile = open("Earthquake.txt","r")
+    f = open("output.csv","w")
+    

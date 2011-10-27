@@ -57,40 +57,12 @@ while i > -1:
 # a while loop to solve the problem. 
 
 import math
-
-done = True
-
-while done:
-
-    op = int(input('Please enter 1: for converting Fahrenheit -> Celsius \n 2: for converting Celsius -> Fahrenheit'))
-
-    num = int(input('Please enter the temperature: '))
-
-    if op == 1:
-        convert = 5/9 * (num - 32)
-        print('The temperature in Celsius is: ', convert)
-    elif op == 2:
-        convert = 9/5 x num + 32
-        print('The temperature in Fahrenheit: ', convert)
-    else:
-        print('Invalid operation: enter 1 or 2')
-
-    answer = str(input('Repeat ? Enter yes or no'))
-    if answer = 'yes':
-        done = True
-    elif answer = 'no'
-        done = False
-
-
-########################################################################################################################################
-
-import math
 done = True
 while done:
      op = int(input('Please enter 1: for converting Fahrenheit -> Celsius, \n 2: for converting Celsius -> Fahrenheit'))
      num = int(input('Please enter the temperature: '))
      if op == 1:
-         convert1 = (5/9) * num - 32
+         convert1 = (num - 32) * 5/9
          print('The temperature in Celsius is: ', convert1)
      elif op == 2:
          convert = 9/5 * (num + 32)
@@ -102,3 +74,23 @@ while done:
          done = True
      elif answer == 'no':
          done = False
+
+# 3: Take the earthquake statistics program 'extractMag.py' and change it so that 
+# instead of writing to a screen, you write to an output file, formatted as a csv file.
+# Download both 'extractMag.py' and 'Earthquake.txt' from blackboard
+
+# Currently fixing number 3
+
+def makeMagnitudeList():
+    quakefile = open("Earthquake.txt","r")
+    outfile = open("format.csv","w")
+    outfile.write(quakefile.readline())
+    maglist = [] #outfile.write(maglist = [ ])
+    for aline in quakefile:
+        vlist = aline.split()
+        maglist.append(float(vlist[1])) #outfile.write(maglist.append(float(vlist[1])))
+    outfile.write(maglist)
+    return maglist
+
+#magList = makeMagnitudeList()
+#print(magList)
