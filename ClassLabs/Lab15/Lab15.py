@@ -79,18 +79,16 @@ while done:
 # instead of writing to a screen, you write to an output file, formatted as a csv file.
 # Download both 'extractMag.py' and 'Earthquake.txt' from blackboard
 
-# Currently fixing number 3
-
 def makeMagnitudeList():
     quakefile = open("Earthquake.txt","r")
-    outfile = open("format.csv","w")
-    outfile.write(quakefile.readline())
-    maglist = [] #outfile.write(maglist = [ ])
+    c = open("output.csv","w")
+    headers = quakefile.readline() # Removes the header of the file
+    maglist = []
     for aline in quakefile:
         vlist = aline.split()
-        maglist.append(float(vlist[1])) #outfile.write(maglist.append(float(vlist[1])))
-    outfile.write(maglist)
-    return maglist
-
-#magList = makeMagnitudeList()
-#print(magList)
+	floaty = float(vlist[1])
+	stringy = str(floaty)
+	maglist.append(stringy + ",")
+	
+    for item in maglist:
+	c.write(item)
