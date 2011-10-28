@@ -6,17 +6,24 @@ def myReadlines(openfile, number):
     for item in range(0,number):
         listoflines.append(f.readline())
         listoflines = listoflines[:number]
+    if len(listoflines) > number:
+        for item in listoflines:
+            if item == "":
+                listoflines.remove(item)
+            elif item != "":
+                pass
+        
     return listoflines
     
 ######################################33
-for item in range(0,number):
-...     lister.append(f.readline())
+#for item in range(0,number):
+#...     lister.append(f.readline())
 
 #The above statement adds all items except the first to the list
 
-def myReadlines(openfile, number):
-...     listoflines = []
-...     for item in range(0,number):
-...         listoflines.append(f.readline())
-...         listoflines = listoflines[:number]
-...     return listoflines
+#def myReadlines(openfile, number):
+#...     listoflines = []
+#...     for item in range(0,number):
+#...         listoflines.append(f.readline())
+#...         listoflines = listoflines[:number]
+#...     return listoflines
