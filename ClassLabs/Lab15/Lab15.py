@@ -92,3 +92,5 @@ def makeMagnitudeList():
 	
     for item in maglist:
 	c.write(item)
+    c.close()
+    quakefile.close()

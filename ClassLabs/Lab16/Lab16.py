@@ -41,3 +41,30 @@ def myReadlines(openfile, number):
 # The resulting dictionary is to be written to an output txt file, where each dict
 # element (pair) is written on a new line. You can assume that all html tags are all
 # in lower case. Download the test file 'Test.html' to test the code.
+
+
+import urllib
+def getUrls(webpage):
+    url = webpage
+    page = urllib.urlopen(url)
+    url_list = {}
+    for line in page:
+        if '<a href=' in line:
+            removeHref = line[8:]
+            end = removeHref.find('>')
+            url = removeHref[0:end]
+            removeHref = removeHref[end+1:]
+            print url 
+            #print removeHref
+            end2 = removeHref.find('<')
+            text = removeHref[0:end2]
+            print '%s \n' % text
+            url_list[url] = text
+    #return url_list
+        else:
+            pass
+    f = open('output.txt','w')
+    for item in url_list.iteritems():
+        f.writelines(str(item)+'\n')
+    f.close()
+
