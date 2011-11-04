@@ -11,10 +11,10 @@
 import cImage
 
 def grayPixel(oldpixel):
-    intensitySum = oldpixel.getRed() + oldpixel.getGreen() + oldPixel.getBlue()
-    aveRGB = intensity // 2
+    intensitySum = oldpixel.getRed() + oldpixel.getGreen() + oldpixel.getBlue()
+    aveRGB = intensitySum // 2
 
-    newPixel = Pixel(aveRGB, aveRGB, aveRGB)
+    newPixel = cImage.Pixel(aveRGB, aveRGB, aveRGB)
     return newPixel
 
 def makeGrayScale(imageFile):
@@ -36,12 +36,12 @@ def makeGrayScale(imageFile):
     myimagewindow.exitOnClick()
 
 
+# 2: Use any picture that you wish, display it in a window and then draw a large
+# letter L (uppercase) over it, that would cover most of the canvas. Make sure
+# the L is thick enough to be seen.
+
 def drawL():
     im = cImage.EmptyImage(400,300)
     p = cImage.setPixel(255,0,0)
-    
-    
-    
-
-    
-    
+    file = cImage.FileImage("put an image in here")
+    for i in range(
