@@ -45,3 +45,10 @@ def drawL():
     p = cImage.setPixel(255,0,0)
     file = cImage.FileImage("put an image in here")
     for i in range(
+    
+# 3: Download the image file buildings.gif. First, display the original
+# picture in a window. Then, create a new image by rotating the original
+# image by 90 degrees clockwise. Display this new image on the right
+# side of the original one. 
+
+def rotateby90(imagefile):
