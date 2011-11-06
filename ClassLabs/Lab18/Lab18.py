@@ -1,5 +1,5 @@
 # Python Lab 18
-
+#
 # 1: Download an image from the web or your personal image collection and
 # display it in a window (remember it must be in a gif format). Then,
 # write a function that manipulates all three color intensities using a
@@ -10,12 +10,14 @@
 
 import cImage
 
+
 def grayPixel(oldpixel):
     intensitySum = oldpixel.getRed() + oldpixel.getGreen() + oldpixel.getBlue()
     aveRGB = intensitySum // 2
 
     newPixel = cImage.Pixel(aveRGB, aveRGB, aveRGB)
     return newPixel
+
 
 def makeGrayScale(imageFile):
     myimagewindow = cImage.ImageWin("Image Processing", 600, 200)
@@ -28,10 +30,10 @@ def makeGrayScale(imageFile):
 
     for row in range(height):
         for col in range(width):
-            originalPixel = oldimage.getPixel(col,row)
+            originalPixel = oldimage.getPixel(col, row)
             newPixel = grayPixel(originalPixel)
             newim.setPixel(col, row, newPixel)
-    newim.setPosition(width+1, 0)
+    newim.setPosition(width + 1, 0)
     newim.draw(myimagewindow)
     myimagewindow.exitOnClick()
 
@@ -40,15 +42,18 @@ def makeGrayScale(imageFile):
 # letter L (uppercase) over it, that would cover most of the canvas. Make sure
 # the L is thick enough to be seen.
 
-def drawL():
-    im = cImage.EmptyImage(400,300)
-    p = cImage.setPixel(255,0,0)
+def drawL(image):
+    im = cImage.EmptyImage(400, 300)
+    p = cImage.setPixel(255, 0, 0)  # Make sure the right method is called'
     file = cImage.FileImage("put an image in here")
-    for i in range(
-    
+    for i in range(file.getHeight()):
+        im  # setPixel method or something else ?
+
 # 3: Download the image file buildings.gif. First, display the original
 # picture in a window. Then, create a new image by rotating the original
 # image by 90 degrees clockwise. Display this new image on the right
-# side of the original one. 
+# side of the original one.
+
 
 def rotateby90(imagefile):
+    print ""
