@@ -1,6 +1,7 @@
 from cImage import *
 
 def double(oldimage):
+    myWin = ImageWin('Test', 500, 500)
     oldw = oldimage.getWidth()
     oldh = oldimage.getHeight()
     newim = EmptyImage(oldw * 2, oldh * 2)
@@ -10,6 +11,7 @@ def double(oldimage):
             originalRow = row // 2
             oldpixel = oldimage.getPixel(originalCol, originalRow)
             newim.setPixel(col, row, oldpixel)
+    
     return newim
 
 # The loop is based on the original image.
@@ -37,6 +39,18 @@ def recKoch(aTurtle, distance, level):
         aTurtle.left(60)
         recKoch(aTurtle, distance / 3, level - 1)
 
+# 3: Greatest common divisor(GCD) of two positive integers a & b is the largest
+# number c that divides both a and b. We can find the GCD of two numbers using
+# the following recursive formula. This function assumes that a > b.
+
+def GCD(a,b):
+    if a % b == 0:
+        return b
+    else:
+        return GCD(b,a%b)
+
+
+
 #4: Rewrite the following function, run it, and explain what it is doing. Can
 # you figure out how this is done?
 
@@ -46,3 +60,7 @@ def func(aString):
         return ''
     else:
         return func(aString[1:]) + aString[0]
+
+# The function works by removing the first letter from the string, then calling
+# the function again until there are no more letters to remove. Then the function
+# will word backwards and combine the letters in reverse order.
