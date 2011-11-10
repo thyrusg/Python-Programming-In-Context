@@ -42,12 +42,21 @@ def makeGrayScale(imageFile):
 # letter L (uppercase) over it, that would cover most of the canvas. Make sure
 # the L is thick enough to be seen.
 
-def drawL(image):
-    im = cImage.EmptyImage(400, 300)
-    p = cImage.setPixel(255, 0, 0)  # Make sure the right method is called'
-    file = cImage.FileImage("put an image in here")
-    for i in range(file.getHeight()):
-        im  # setPixel method or something else ?
+from cImage import *
+def bigL(image):
+myWin = ImageWin('L',500,500)
+file = FileImage('buildings.gif')
+redPixel = Pixel(255,0,0)
+x,y = 0,0
+im = EmptyImage(file.getWidth,file.getHeight())
+
+for a in range(file.getWidth()):
+    im.setPixel(x,a,redpixel)
+
+for b in range(file.getHeight()):
+    im.setPixel(b,a,redpixel)
+
+im.draw(myWin)
 
 # 3: Download the image file buildings.gif. First, display the original
 # picture in a window. Then, create a new image by rotating the original
@@ -55,5 +64,20 @@ def drawL(image):
 # side of the original one.
 
 
-def rotateby90(imagefile):
-    print ""
+from cImage import *
+
+def rotate(image):
+    picture = FileImage(image)
+    myWin = ImageWin('Picture', 1000, 800)
+    oldw = picture.getWidth()
+    oldh = picture.getHeight()
+    picture.draw(myWin)
+
+    newim = EmptyImage(oldw,oldw)
+    for row in range(oldh):
+        for col in range(oldw):
+            oldpixel = picture.getPixel(col, row)
+            newim.setPixel(oldw-row, col, oldpixel)
+
+    newim.setPosition(oldh+1,0)
+    newim.draw(myWin)
