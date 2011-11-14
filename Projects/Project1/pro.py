@@ -45,16 +45,13 @@ def earthquakeStats(file):
             moderateMag[placeIndex] = moderateMag[placeIndex] + 1
         else:
             pass
-    filename = input('Please include the .csv extension')
-    outputname = open(filename, 'w')
     print('Please enter the name of the file where the out will be stored')
-    outputname.write("%s %s %s %s %s %s" % ('REGION,', 'MODERATE,', 'STRONG',
-    'MAJOR,', 'GREAT,', 'OVERALL,'))
+    filename = input('Please include the .csv extension: ')
+    outputname = open(filename, 'w')
+    outputname.write("%s\t %s\t %s\t %s\t %s\n" % ('REGION', 'MODERATE',
+    'STRONG', 'MAJOR', 'GREAT'))
+    #outputname.write('\n')
 
-    for i in range(0, len(name)):
-        outputname.write("%s %i %i %i %i %i" % (name[i], moderateMag[i],
-        strongMag[i], majorMag[i], greatMag[i]))
-
-
-
-    #return greatMag, name, majorMag, strongMag, moderateMag
+    for item in range(0, len(name)):
+        outputname.writelines('%s\t %s\t %s\t %s\t %s\n' % (name[item],
+        moderateMag[item], strongMag[item], majorMag[item], greatMag[item]))
