@@ -51,8 +51,9 @@ def earthquakeStats(file):
     outputname.write("%s %s %s %s %s %s" % ('REGION,', 'MODERATE,', 'STRONG',
     'MAJOR,', 'GREAT,', 'OVERALL,'))
 
-    outputname.write("%s %i %i %i %i %i" % (name[i], moderateMag[i],
-    strongMag[i], majorMag[i], greatMag[i]))
+    for i in range(0, len(name)):
+        outputname.write("%s %i %i %i %i %i" % (name[i], moderateMag[i],
+        strongMag[i], majorMag[i], greatMag[i]))
 
 
 
