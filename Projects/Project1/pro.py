@@ -70,7 +70,9 @@ def earthquakeStats(file):
 
 # This creates the csv file
     for item in range(0, len(name)):
-        outputname.writelines('%s\t %s\t %s\t %s\t %s\t %s\n' % (name[item],
+        a = str(name[item])[:-1]
+        a = a[:-1]
+        outputname.writelines('%s\t %s\t %s\t %s\t %s\t %s\n' % (a,
         moderateMag[item], strongMag[item], majorMag[item], greatMag[item],
         overall(item)))
 
