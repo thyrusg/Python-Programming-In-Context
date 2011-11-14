@@ -14,6 +14,7 @@ def earthquakeStats(file):
     strongMag = []  # Magnitudes between 6 - 6.9
     moderateMag = []  # Magnitudes between 5 - 5.9
 
+# Below adds all of the region names to a list
     for line in f:
         split = line.split('\t')
         place = split[6]
@@ -22,6 +23,7 @@ def earthquakeStats(file):
         else:
             pass
 
+# The below adds zeros to each magnitude list for counting
     for i in name:
         greatMag.append(0)
         majorMag.append(0)
@@ -29,6 +31,9 @@ def earthquakeStats(file):
         moderateMag.append(0)
 
     f.seek(postHeader)  # Go to the spot after reading the header
+
+# This for loop keeps the lists parallel with each other and adds 1 to the
+# proper index based on the current region and its magnitude
 
     for line in f:
         split = line.split('\t')
@@ -45,13 +50,28 @@ def earthquakeStats(file):
             moderateMag[placeIndex] = moderateMag[placeIndex] + 1
         else:
             pass
+
     print('Please enter the name of the file where the out will be stored')
     filename = input('Please include the .csv extension: ')
     outputname = open(filename, 'w')
-    outputname.write("%s\t %s\t %s\t %s\t %s\n" % ('REGION', 'MODERATE',
-    'STRONG', 'MAJOR', 'GREAT'))
+    outputname.write("%s\t %s\t %s\t %s\t %s\t %s\n" % ('REGION', 'MODERATE',
+    'STRONG', 'MAJOR', 'GREAT', 'OVERALL'))  # This makes the header of the file
     #outputname.write('\n')
 
+# This calculates the overall amount of earthquakes when used with a for loop
+    def overall(x):
+        total = []
+        total.append(moderateMag[x])
+        total.append(strongMag[x])
+        total.append(majorMag[x])
+        total.append(greatMag[x])
+        amount = sum(total)
+        return amount
+
+# This creates the csv file
     for item in range(0, len(name)):
-        outputname.writelines('%s\t %s\t %s\t %s\t %s\n' % (name[item],
-        moderateMag[item], strongMag[item], majorMag[item], greatMag[item]))
+        outputname.writelines('%s\t %s\t %s\t %s\t %s\t %s\n' % (name[item],
+        moderateMag[item], strongMag[item], majorMag[item], greatMag[item],
+        overall(item)))
+
+# To-Do: Close the files at the end
