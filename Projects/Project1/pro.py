@@ -4,6 +4,7 @@
 
 def earthquakeStats(file):
     f = open(file, 'r')
+    sumfile = open('summary.txt','a')
 
     removeHeader = f.readline()  # Removes the header of the file
     postHeader = f.tell()
@@ -75,5 +76,8 @@ def earthquakeStats(file):
         outputname.writelines('%s\t %s\t %s\t %s\t %s\t %s\n' % (a,
         moderateMag[item], strongMag[item], majorMag[item], greatMag[item],
         overall(item)))
+
+    totalearthquakes = sum(moderateMag) + sum(strongMag) + sum(majorMag) + sum(greatMag)
+    sumfile.write('TOTAL NUMBER OF EARTHQUAKES >= 5: \n 03/06/2011-03/12/2011 %s' % totalearthquakes)
 
 # To-Do: Close the files at the end
