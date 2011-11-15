@@ -80,4 +80,5 @@ def earthquakeStats(file):
     totalearthquakes = sum(moderateMag) + sum(strongMag) + sum(majorMag) + sum(greatMag)
     sumfile.write('TOTAL NUMBER OF EARTHQUAKES >= 5: \n 03/06/2011-03/12/2011 %s' % totalearthquakes)
 
-# To-Do: Close the files at the end
+    f.close()
+    sumfile.close()
