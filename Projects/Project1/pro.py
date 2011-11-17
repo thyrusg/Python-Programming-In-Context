@@ -69,6 +69,15 @@ def earthquakeStats(file):
         amount = sum(total)
         return amount
 
+    def highestRegion(places):
+        dict = {}
+        for i in range(0, len(places)):
+            dict[places[i]] = overall(i)
+        maxnum = max(dict, key=dict.get)
+        maxnumkey = dict[maxnum]
+        nameAndKey = [maxnum, maxnumkey]
+        return nameAndKey
+
 # This creates the csv file
     for item in range(0, len(name)):
         a = str(name[item])[:-1]
@@ -79,6 +88,6 @@ def earthquakeStats(file):
 
     totalearthquakes = sum(moderateMag) + sum(strongMag) + sum(majorMag) + sum(greatMag)
     sumfile.write('TOTAL NUMBER OF EARTHQUAKES >= 5: \n 03/06/2011-03/12/2011 %s' % totalearthquakes)
-
     f.close()
     sumfile.close()
+    print(highestRegion(name))
