@@ -16,24 +16,34 @@ class makeDictionary:
             print('Name Not Found')
             return (-1)
 
-    def update(self, name, score):
+    def update(self, name, score):  # Works
+        self.dictionary[name] = score
 
-    def sort(self, dictionary):
-        print(self.dictionary)
-        #return a sorted list of all the scores
+    def sort(self):  # Works
+        a = list(self.dictionary.values())
+        a.sort()
+        print a
 
-    def average(dictionary):
-        print(dictionary)
+    def average(dictionary):  # Untested
+        listOfScores = []
+        for value in self.dictionary.itervalues():
+            listOfScores.append(value)
+        average = sum(listOfScores) / len(listOfScores)
+        return average
         #calculate the average of all the scores
 
     def min(dictionary):
-        print(dictionary)
-        #calculate the minimum score
+        listOfScores = []
+        for value in self.dictionary.itervalues():
+            listOfScores.append(value)
 
     def max(dictionary):
         print(dictionary)
         #calculate the maximum score
 
     def printer(dictionary):
-        print(dictionary)
+        for i in range(len(self.dictionary)):
+            #a = keys, b = values
+            #sort each
+            print(a[i], '', b[i]])
         #print a table of all the students and their respective scores
