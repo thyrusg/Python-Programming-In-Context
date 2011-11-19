@@ -4,7 +4,7 @@
 
 def earthquakeStats(file):
     f = open(file, 'r')
-    sumfile = open('summary.txt','a')
+    sumfile = open('summary.txt', 'a')
 
     removeHeader = f.readline()  # Removes the header of the file
     postHeader = f.tell()
@@ -91,3 +91,4 @@ def earthquakeStats(file):
     f.close()
     sumfile.close()
     print(highestRegion(name))
+    print("Processing Complete")
