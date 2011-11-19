@@ -1,7 +1,7 @@
 class makeDictionary:
 
-    def __init__(self, dictionary):
-        self.dictionary = dictionary
+    def __init__(self):
+        self.dictionary = {}
 
     def add(self, name, score):  # Works
             self.dictionary[name] = score
@@ -24,26 +24,27 @@ class makeDictionary:
         a.sort()
         print a
 
-    def average(dictionary):  # Untested
-        listOfScores = []
-        for value in self.dictionary.itervalues():
-            listOfScores.append(value)
+    def average(self):  # Works
+        listOfScores = list(self.dictionary.values())
         average = sum(listOfScores) / len(listOfScores)
         return average
         #calculate the average of all the scores
 
-    def min(dictionary):
-        listOfScores = []
-        for value in self.dictionary.itervalues():
-            listOfScores.append(value)
+    def min(self):  # Works
+        listOfScores = list(self.dictionary.values())
+        minimum = min(listOfScores)
+        return minimum
+        # Calculate the minimum score
 
-    def max(dictionary):
-        print(dictionary)
+    def max(self):  # Works
+        listOfScores = list(self.dictionary.values())
+        maximum = max(listOfScores)
+        return maximum
         #calculate the maximum score
 
-    def printer(dictionary):
-        for i in range(len(self.dictionary)):
-            #a = keys, b = values
-            #sort each
-            print(a[i], '', b[i]])
+    def printer(dictionary):  # Not done
+        print('Hello World')
         #print a table of all the students and their respective scores
+
+# To-Do:
+# Finish the printer to function. Make sure to sort by alphabetical order
