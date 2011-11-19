@@ -1,0 +1,49 @@
+Open the file
+Read the first line of the file.
+Create name list.
+Create greatMag list.
+Create majorMag list.
+Create strongMag list.
+Create moderateMag list
+for line in file:
+    split the line at the tabs
+    assign spot #6 to place
+    if place is not in name:
+        append place to name
+    if its in the list:
+        then pass
+for item in name:
+    add a 0 to greatMag
+    add a 0 to majorMag
+    add a 0 to strongMag
+    add a 0 to moderateMag
+Go back to the spot right after reading the header        
+for line in file:
+    split the line at the tabs
+    magnitude is 2nd spot
+    place is the 6th spot
+    find the index of place in the list, name.
+    if the magnitude is greater than or equal to 8:
+        add 1 to the index of greatMag
+    elif mag is between 7 and 7.9:
+        add 1 to the index of majorMag
+    elif mag is between 6 and 6.9:
+        add 1 to the index of strongMag
+    elif mag is between 5 and 5.9:
+        add 1 to the index of moderateMag
+    elif mag is lower than 5:
+        ignore and pass
+Ask the user to input a name for the csv file.
+Open the csv file with write permissions.
+Write the headers to the csv files.
+Create an overall function that will return the the total of all earthquakes based on index.
+Create a function called highestRegion.
+for item in range 0-length of name:
+    a = str(name[item])
+    a = a[:-1]
+    Write the region name and each earthquake stats to csv
+Create totalearthquakes to hold the sum of all the earthquakes
+Write the value of totalearthquakes to summary.txt
+close the earthquake file
+close the csv file
+close the summary file    
