@@ -51,15 +51,16 @@ class Store:
         return self.num_of_phones
 
     def update_phone_info(self):
+        """Update a phone's information"""
         print("Which phone would you like to update ?")
         manufacturer = input("Enter manufacturer: ")
         model = input("Enter the model name: ")
         for item in range(0, len(self.phones)):
             if manufacturer and model in self.phones[item]:
                 print("What would you like to update ?")
-                answer = input("[1] Update manufacturer \n",
+                answer = int(input("[1] Update manufacturer \n",
                 "[2] Update Model \n,"
-                "[3] Update Price \n", "[4] Update Quantity \n", "[5] Exit")
+                "[3] Update Price \n", "[4] Update Quantity \n", "[5] Exit"))
                 if answer == 1:
                     newManu = input("Enter the new manufacturer: ")
                     self.phones[item][0] = newManu
