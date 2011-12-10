@@ -113,16 +113,22 @@ class Store:
 
     def writer(self):
         f = open(input("Enter the output files name: "), 'w')
-        print("Writing the phone data to %s" % f)
-        for item in self.phones:
+        print("Writing the phone data to file")
+        for item in range(0, len(self.phones)):
             f.write("%s \t %s \t %s \t %s \n" %
             (self.phones[item][0], self.phones[item][1], self.phones[item][2],
             self.phones[item][3]))
-        print("Writing complete")
+        print("Writing complete \n")
+        f.close()
 
     def importer(self):
         f = open(input("Enter the name of the file: "), 'r')
         print("Reading data")
         for aline in f:
             split = aline.split()
+            split[2] = float(split[2])
+            split[3] = int(split[3])
+            self.add_quantity(split[3])
             self.phones.append(split)
+        print("Reading complete \n")
+        f.close()
