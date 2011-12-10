@@ -12,6 +12,14 @@ class Store:
         """Remove amount from number of phones"""
         self.num_of_phones -= amount
 
+    def list_phones(self):
+        print("%s \t %s \t %s \t %s" %
+        ("Manufacturer", "Model", "Price", "Amount"))
+        for item in range(0, len(self.phones)):
+            print("%s \t %s \t %s \t %s" %
+            (self.phones[item][0], self.phones[item][1], self.phones[item][2],
+            self.phones[item][3]))
+
     def add_phone(self):
         """Add phones to the store. Add a way to check if phone is in store"""
         newPhone = []  # List containing the phones data
@@ -102,3 +110,19 @@ class Store:
                     break
             else:
                 pass
+
+    def writer(self):
+        f = open(input("Enter the output files name: "), 'w')
+        print("Writing the phone data to %s" % f)
+        for item in self.phones:
+            f.write("%s \t %s \t %s \t %s \n" %
+            (self.phones[item][0], self.phones[item][1], self.phones[item][2],
+            self.phones[item][3]))
+        print("Writing complete")
+
+    def importer(self):
+        f = open(input("Enter the name of the file: "), 'r')
+        print("Reading data")
+        for aline in f:
+            split = aline.split()
+            self.phones.append(split)
