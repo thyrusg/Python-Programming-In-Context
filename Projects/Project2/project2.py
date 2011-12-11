@@ -5,6 +5,10 @@ class Phone:
         self.price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return("%s \t %s \t %s \t %s" %
+        (self.manufact, self.model, self.price, self.quantity))
+
     def set_manufact(self, newManfact):
         self.manufact = newManfact
 
