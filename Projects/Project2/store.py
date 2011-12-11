@@ -49,6 +49,7 @@ class Store:
                     newPhone.append(quantity)
                     self.phones.append(newPhone)
                     self.add_quantity(quantity)
+                    break
                 else:
                     pass
 
