@@ -1,8 +1,13 @@
+import project2
+
+
 class Store:
 
     def __init__(self):
+        """The store class initializer that provides two lists and a counter"""
         self.phones = []
         self.num_of_phones = 0
+        self.objects = []
 
     def add_quantity(self, amount):
         """Update the amount of phones in the store"""
@@ -13,6 +18,7 @@ class Store:
         self.num_of_phones -= amount
 
     def list_phones(self):
+        """Prints a list of the phones using the list of list of phones"""
         print("%s \t %s \t %s \t %s" %
         ("Manufacturer", "Model", "Price", "Amount"))
         for item in range(0, len(self.phones)):
@@ -27,19 +33,21 @@ class Store:
         model = input("Enter the model: ")
         price = float(input("Enter the price: "))
         quantity = int(input("Enter the quantity: "))
-        if len(self.phones) == 0:
+        object = project2.Phone(manufacturer, model, price, quantity)
+        if len(self.phones) == 0:  # If list is empty just add and stop
             newPhone.append(manufacturer)
             newPhone.append(model)
             newPhone.append(price)
             newPhone.append(quantity)
             self.phones.append(newPhone)
+            self.objects.append(object)
             self.add_quantity(quantity)
         elif len(self.phones) > 0:
             for item in range(0, len(self.phones)):
                 if manufacturer and model in self.phones[item]:
                     print("That phone is already in the store")
                     print("The extra quantity was added to the phone")
-                    self.phones[item][3] += quantity
+                    self.phones[item][3] += quantity  # Update quantity
                     self.add_quantity(quantity)
                     break
                 elif manufacturer and model not in self.phones[item]:
@@ -48,7 +56,8 @@ class Store:
                     newPhone.append(price)
                     newPhone.append(quantity)
                     self.phones.append(newPhone)
-                    self.add_quantity(quantity)
+                    self.objects.append(object)
+                    self.add_quantity(quantity)  # Keep quantity in sync
                     break
                 else:
                     pass
@@ -58,7 +67,7 @@ class Store:
         manufacturer = input("Enter the manufacturer: ")
         model = input("Enter the model: ")
         for item in range(0, len(self.phones)):
-            if manufacturer and model in self.phones[item]:
+            if manufacturer and model in self.phones[item]:  # Check for phone
                 answer = input("Are you sure ? (Y/N)")
                 if answer == 'y' or 'Y':
                     print("%s %s %s %s" % (self.phones[item][0],
@@ -66,6 +75,7 @@ class Store:
                     self.phones[item][3]))
                     self.remove_quantity(self.phones[item][3])
                     self.phones.remove(self.phones[item])
+                    del self.objects[item]
                     print("The phone was succesfully removed")
                     #self.remove_quantity(self.phones[item][3])
                     break
