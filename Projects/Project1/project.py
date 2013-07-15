@@ -1,5 +1,5 @@
 # Name: Thyrus Gorges
-# Access ID: eo8112
+# Access ID: 
 
 
 def earthquakeStats(file):
